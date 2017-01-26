@@ -13,6 +13,7 @@ gem 'rails', '~> 5.0.1'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem 'stripe'
 #gem 'sendgrid-ruby'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
