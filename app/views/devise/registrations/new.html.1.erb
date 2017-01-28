@@ -8,10 +8,8 @@
     <h4><%= t('.sign_up', :default => "Sign up") %></h4>
   </div>
   <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, 
-                            :url => registration_path(resource_name),
-                            html: { role: "form", class: "new_form" }) do |f| %>
-        <div class="form-group">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form", class: "cc_form" }) do |f| %>
+      <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
@@ -23,7 +21,6 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
-      
       <%= fields_for(:payment) do |p| %>
         <div class="row col-md-12">
           <div class="form-group col-md-4 no-left-padding">
@@ -41,7 +38,7 @@
             <div class="col-md-3">
               <%= p.select :card_expires_month, options_for_select( Payment.month_options),
                                                 { include_blank: 'Month' },
-                                                "data-stripe" => "exp-month",
+                                                "data_stripe" => "exp-month",
                                                 class: "form-control",
                                                 required: true %>
             </div>
